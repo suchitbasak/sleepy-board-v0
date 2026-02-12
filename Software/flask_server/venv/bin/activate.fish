@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV /home/akatosh/Projects/Emdedded/RP2350_Pico2W/Sleepy-board-v0/Software/flask_server/venv
+set -gx VIRTUAL_ENV /home/akatosh/Projects/Emdedded/Sleepy_board/Sleepy_board_v0/Software/flask_server/venv
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/"bin $PATH

@@ -27,31 +27,62 @@ Using circuitpython since it is, in my opinion, the easiest to use. I am using [
 - These two files and then combined into another script that is used to send data to the server.
 
 ## Setting up the server
-I used flask to set up a server on my laptop. To run the server:
-
-```
-cd Software/flask_server
-source venv/bin/activate
-
-# Install packages if needed
-pip install some-package
-
-# Run app
-flask --app app_server run --host=0.0.0.0 --port=5000
-
-# Stop working
-deactivate
-flask --app app_server run --host=0.0.0.0 --port=5000
-```
-
+I used flask to set up a server on my laptop. 
 
 Things to keep in mind:
 1. Identical JSON formats on the server and the Pico
 2. Correct URL on the Pico (use `ifconfig` to find the IP address of the device the Pico needs to talk to)
 3. Don't `break` when you see an Exception - keep trying.
 
+## Running everything together
+1. To run the server run `Software/start.sh`. This script sets the python environment and starts the server.
+```
+cd Software
+chmod +x start.sh
+./start.sh
+```
 
-## How to run everything!
-1. Run the flask server 
 2. Transfer the files in the Firmware folder onto the Pico. Start sending data.
 3. Open the correct address on a web browser conencted to any device on the same wifi network et voilà !
+
+
+## Results
+![Screenshot of the last few readings](image.png)
+
+
+## Data sent by the Pico
+
+Here is the terminal output from the Pico
+
+```
+Hello World!
+
+Connecting to WiFi
+Connected to WiFi
+pool created
+ssl context created
+request created
+sending: {'humidity': 51.1572, 'temperature': 25.2956, 'light_ambient': 75, 'light_lux': 40.32}
+Response: 200 Body: {"status":"success"}
+
+sending: {'humidity': 51.1022, 'temperature': 25.2697, 'light_ambient': 82, 'light_lux': 44.0832}
+Response: 200 Body: {"status":"success"}
+
+sending: {'humidity': 51.1513, 'temperature': 25.2647, 'light_ambient': 84, 'light_lux': 45.1584}
+Response: 200 Body: {"status":"success"}
+
+sending: {'humidity': 51.0452, 'temperature': 25.2292, 'light_ambient': 84, 'light_lux': 45.1584}
+Response: 200 Body: {"status":"success"}
+
+sending: {'humidity': 51.003, 'temperature': 25.226, 'light_ambient': 84, 'light_lux': 45.1584}
+Response: 200 Body: {"status":"success"}
+
+sending: {'humidity': 50.9624, 'temperature': 25.2094, 'light_ambient': 84, 'light_lux': 45.1584}
+Response: 200 Body: {"status":"success"}
+
+sending: {'humidity': 50.9853, 'temperature': 25.2172, 'light_ambient': 84, 'light_lux': 45.1584}
+Response: 200 Body: {"status":"success"}
+
+sending: {'humidity': 50.9627, 'temperature': 25.217, 'light_ambient': 81, 'light_lux': 43.5456}
+Response: 200 Body: {"status":"success"}
+```

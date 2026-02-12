@@ -9,7 +9,7 @@ alias deactivate 'test $?_OLD_VIRTUAL_PATH != 0 && setenv PATH "$_OLD_VIRTUAL_PA
 # Unset irrelevant variables.
 deactivate nondestructive
 
-setenv VIRTUAL_ENV /home/akatosh/Projects/Emdedded/RP2350_Pico2W/Sleepy-board-v0/Software/flask_server/venv
+setenv VIRTUAL_ENV /home/akatosh/Projects/Emdedded/Sleepy_board/Sleepy_board_v0/Software/flask_server/venv
 
 set _OLD_VIRTUAL_PATH="$PATH"
 setenv PATH "$VIRTUAL_ENV/"bin":$PATH"
