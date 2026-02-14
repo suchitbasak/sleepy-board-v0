@@ -3,3 +3,4 @@ CIRCUITPY_WIFI_PASSWORD = "YOUR_WIFI_PASSWORD"
 
 
 # RUN: nmcli device wifi show-password on linux
+# (Horrible option, but it works)
